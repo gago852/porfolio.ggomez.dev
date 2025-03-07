@@ -1,7 +1,8 @@
 # 👨🏻‍💻 Porfolio para programadores y desarrolladores
 
 <div align="center">
-<a href="https://porfolio.dev/">
+<!-- TODO: cambiar url por el de cloudflare -->
+<a href="https://example.com/">
 <img src="./public/porfolio.webp">
 </a>
 <p></p>
@@ -11,17 +12,9 @@
 
 ![Astro Badge](https://img.shields.io/badge/Astro-FF3E00?logo=astro&logoColor=fff&style=flat)
 ![Tailwind CSS Badge](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=flat)
-![GitHub stars](https://img.shields.io/github/stars/midudev/porfolio.dev)
-![GitHub PRs](https://img.shields.io/github/issues-pr/midudev/porfolio.dev)
-![GitHub forks](https://img.shields.io/github/forks/midudev/porfolio.dev)
-![GitHub issues](https://img.shields.io/github/issues/midudev/porfolio.dev)
+![GitHub stars](https://img.shields.io/github/stars/gago852/porfolio.ggomez.dev)
+![GitHub PRs](https://img.shields.io/github/issues-pr/gago852/porfolio.ggomez.dev)
+![GitHub forks](https://img.shields.io/github/forks/gago852/porfolio.ggomez.dev)
+![GitHub issues](https://img.shields.io/github/issues/gago852/porfolio.ggomez.dev)
 
 </div>
-
-## 🫂 Contribuidores
-
-<a href="https://github.com/midudev/porfolio.dev/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=midudev/porfolio.dev" />
-</a>
-
-<p></p>
