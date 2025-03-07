@@ -11,7 +11,7 @@ export default defineConfig({
     schema: {
       ISPRODUCTION: envField.boolean({
         default: false,
-        context: 'client',
+        context: 'server',
         access: 'public',
       }),
     },
