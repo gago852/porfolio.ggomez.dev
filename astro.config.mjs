@@ -4,8 +4,7 @@ import tailwind from '@astrojs/tailwind';
 import robotsTxt from 'astro-robots-txt';
 
 // https://astro.build/config
-// TODO: Add your site URL
 export default defineConfig({
   integrations: [tailwind(), robotsTxt()],
-  site: 'https://example.com',
+  site: 'https://ggomez-dev.pages.dev/',
 });

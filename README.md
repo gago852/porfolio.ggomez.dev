@@ -1,8 +1,7 @@
 # 👨🏻‍💻 Porfolio para programadores y desarrolladores
 
 <div align="center">
-<!-- TODO: cambiar url por el de cloudflare -->
-<a href="https://example.com/">
+<a href="https://ggomez-dev.pages.dev/">
 <img src="./public/porfolio.webp">
 </a>
 <p></p>
