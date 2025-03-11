@@ -1,0 +1,79 @@
+---
+const OPTIONS = [
+  {
+    title: '🇪🇸 Espanol',
+    url: 'https://github.com/gago852/resume-latex/releases/latest/download/gabriel_gomez_resume_es.pdf',
+  },
+  {
+    title: '🇺🇸 English',
+    url: 'https://github.com/gago852/resume-latex/releases/latest/download/gabriel_gomez_resume_en.pdf',
+  },
+];
+---
+
+<div class="relative ml-1 mr-1">
+  <button
+    transition:persist
+    id="cd-download-toggle-btn"
+    class="inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white focus-visible:ring-yellow-500/80 text-md hover:bg-gray-900 hover:border-gray-700 hover:text-white dark:hover:bg-gray-100 dark:hover:border-gray-300 dark:hover:text-black group max-w-fit focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
+  >
+    <slot />
+  </button>
+  <div
+    transition:persist
+    id="cd-download"
+    class="absolute hidden scale-80 top-8 right-0 text-sm p-1 min-w-[8rem] rounded-md border border-gray-100 bg-white/90 dark:bg-gray-900/90 dark:border-gray-500/20 shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md"
+  >
+    <ul>
+      {
+        OPTIONS.map((option) => (
+          <li class="px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm">
+            <a
+              href={`${option.url}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              role="link"
+              class="px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm"
+            >
+              {option.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<style>
+  #cd-download.open {
+    display: inline;
+    animation: scale-up-center 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  @keyframes scale-up-center {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+</style>
+
+<script is:inline>
+  const cvDownloadMenu = document.getElementById('cd-download');
+  document.addEventListener('click', () => {
+    cvDownloadMenu.classList.remove('open');
+  });
+
+  document
+    .getElementById('cd-download-toggle-btn')
+    .addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isClosed = !cvDownloadMenu.classList.contains('open');
+      cvDownloadMenu.classList[isClosed ? 'add' : 'remove']('open');
+    });
+</script>
