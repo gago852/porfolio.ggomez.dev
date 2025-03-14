@@ -1,4 +1,5 @@
 export async function onRequest(context) {
+  console.log('Middleware onRequest');
   const { request } = context;
   const url = new URL(request.url);
 
