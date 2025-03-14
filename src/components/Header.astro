@@ -1,25 +1,32 @@
 ---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
 import ThemeToggle from './ThemeToggle.astro';
+import LanguagePicker from './LanguagePicker.astro';
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const { currentLocale } = Astro;
+currentLocale === 'en' ? '/en/#experiencia' : '/#experiencia';
 const navItems = [
   {
-    title: 'Experiencia',
-    label: 'experiencia',
-    url: '/#experiencia',
+    title: t('nav.home'),
+    label: currentLocale === 'en' ? 'experience' : 'experiencia',
+    url: currentLocale === 'en' ? '/en/#experience' : '/#experiencia',
   },
   {
-    title: 'Proyectos',
-    label: 'proyectos',
-    url: '/#proyectos',
+    title: t('nav.projects'),
+    label: currentLocale === 'en' ? 'projects' : 'proyectos',
+    url: currentLocale === 'en' ? '/en/#projects' : '/#proyectos',
   },
   {
-    title: 'Sobre mí',
-    label: 'sobre-mi',
-    url: '/#sobre-mi',
+    title: t('nav.about'),
+    label: currentLocale === 'en' ? 'about-me' : 'sobre-mi',
+    url: currentLocale === 'en' ? '/en/#about-me' : '/#sobre-mi',
   },
   {
-    title: 'Contacto',
-    label: 'contacto',
+    title: t('nav.contact'),
+    label: currentLocale === 'en' ? 'contact' : 'contacto',
     url: 'mailto:ggomez.dev@outlook.com',
   },
 ];
@@ -43,6 +50,7 @@ const navItems = [
       ))
     }
     <ThemeToggle />
+    <LanguagePicker />
   </nav>
 </header>
 

@@ -16,4 +16,14 @@ export default defineConfig({
       }),
     },
   },
+  i18n: {
+    locales: ['en', 'es'],
+    defaultLocale: 'es',
+    routing: {
+      prefixDefaultLocale: false,
+    },
+    fallback: {
+      en: 'es',
+    },
+  },
 });

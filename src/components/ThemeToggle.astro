@@ -2,8 +2,16 @@
 import SunIcon from './icons/Sun.astro';
 import MoonIcon from './icons/Moon.astro';
 import SystemIcon from './icons/System.astro';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
 
-const THEMES = ['Light', 'Dark', 'System'];
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const THEMES = [
+  { id: 'light', label: 'Light' },
+  { id: 'dark', label: 'Dark' },
+  { id: 'system', label: 'System' },
+];
 ---
 
 <div class="relative ml-1 mr-1">
@@ -31,8 +39,11 @@ const THEMES = ['Light', 'Dark', 'System'];
     <ul>
       {
         THEMES.map((theme) => (
-          <li class="themes-menu-option px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm">
-            {theme}
+          <li
+            id={theme.id}
+            class="themes-menu-option px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm"
+          >
+            {theme.label}
           </li>
         ))
       }
@@ -110,7 +121,7 @@ const THEMES = ['Light', 'Dark', 'System'];
 
   document.querySelectorAll('.themes-menu-option').forEach((element) => {
     element.addEventListener('click', (e) => {
-      localStorage.setItem('theme', e.target.innerText.toLowerCase().trim());
+      localStorage.setItem('theme', e.target.id);
       updateTheme();
     });
   });

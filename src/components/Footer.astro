@@ -1,5 +1,9 @@
 ---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+
 const currentYear = new Date().getFullYear();
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <footer
@@ -12,19 +16,21 @@ const currentYear = new Date().getFullYear();
       >© {currentYear}
       <a href="https://ggomez-dev.pages.dev/" class="hover:underline"
         >Gabriel Gomez</a
-      >. Casi todos los derechos reservados
+      >. {t('footer.rights')}
     </span>
     <ul
       class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
     >
       <li>
-        <a href="/#sobre-mi" class="hover:underline me-4 md:me-6">Sobre mí</a>
+        <a href="/#sobre-mi" class="hover:underline me-4 md:me-6"
+          >{t('nav.about')}</a
+        >
       </li>
       <li>
         <a
           id="contacto"
           href="mailto:ggomez.dev@outlook.com"
-          class="hover:underline">Contacto</a
+          class="hover:underline">{t('nav.contact')}</a
         >
       </li>
     </ul>

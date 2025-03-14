@@ -1,15 +1,20 @@
 ---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
 import ExperienceItem from './ExperienceItem.astro';
-const EXPERIENCE = [
-  {
-    date: 'Junio 2023',
-    title: 'Desarrollador de Software',
-    company: 'Extreme Technologies S.A.',
-    description:
-      'Analizo, diseño, desarrollo y doy mantenimiento a soluciones de software para control de cuadrillas de operarios en empresas de servicio publico como agua, luz y gas. Ademas apoye a un equipo de desarrollo para implementar un middleware a un sistema de cobros de un servicio de transporte publico de buses. Se utilizo tecnologías como Java, Android, PostgreSQL, entre otras.',
-    link: 'https://www.extreme.com.co/extreme/',
-  },
-];
+
+type Experience = {
+  date: string;
+  title: string;
+  company: string;
+  description: string;
+  link: string;
+};
+
+type tLang = (str: any) => any;
+
+const lang = getLangFromUrl(Astro.url);
+const t: tLang = useTranslations(lang);
+const EXPERIENCE: Experience[] = t('exp');
 ---
 
 <ol class="relative mt-16">

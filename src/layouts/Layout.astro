@@ -5,6 +5,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { ClientRouter } from 'astro:transitions';
 import { ISPRODUCTION } from 'astro:env/server';
+import { defaultLang } from '@/i18n/ui';
 
 interface Props {
   title: string;
@@ -13,10 +14,15 @@ interface Props {
 
 const { description, title } = Astro.props;
 const isProduction = ISPRODUCTION;
+
+const { currentLocale, url } = Astro;
+const { origin } = url;
+const defaultLocale = defaultLang;
+const listLanguages = ['en', 'es'];
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={currentLocale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -24,20 +30,29 @@ const isProduction = ISPRODUCTION;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    {
+      listLanguages.map((lang) => (
+        <link
+          rel="alternate"
+          hreflang={lang}
+          href={`${origin}/${lang === defaultLocale ? '' : lang}`}
+        />
+      ))
+    }
     <ClientRouter />
 
     {
       isProduction && (
         <>
           {/* <!-- Google tag (gtag.js) --> */}
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-L2XEND6SBJ"></script>
+          {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-L2XEND6SBJ"></script>
             <script>
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
 
               gtag('config', 'G-L2XEND6SBJ');
-            </script> 
+            </script>  */}
         </>
       )
     }

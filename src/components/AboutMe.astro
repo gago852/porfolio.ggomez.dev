@@ -1,36 +1,19 @@
 ---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+
 const personalImageAlt = 'Gabriel Gomez';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <article
   class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row"
 >
   <div
+    set:html={t('about.bio')}
     class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
-  >
-    <p>
-      Comencé hace más de dos años en el desarrollo de aplicaciones Android,
-      especializándome en Java y el ecosistema de Android. Durante este tiempo,
-      he trabajado en para <strong
-        >empresas de servicios públicos, como control de flotas y facturación</strong
-      >, asegurando la implementación y mantenimiento eficiente de estas
-      aplicaciones.
-    </p>
-
-    <p>
-      Mi interés por mejorar y optimizar el desarrollo móvil me llevó a aprender
-      Kotlin y Jetpack Compose, además de profundizar en pruebas para <strong>
-        la calidad del software.</strong
-      >
-    </p>
-
-    <p>
-      Desde Colombia, me mantengo en constante aprendizaje, explorando <strong>
-        tecnologías para el desarrollo móvil multiplataforma, como Flutter y
-        React Native</strong
-      >, y adoptando mejores prácticas para seguir creciendo como desarrollador.
-    </p>
-  </div>
+  />
 
   <img
     width="200"

@@ -8,8 +8,24 @@ import Android from './icons/Android.astro';
 import Java from './icons/Java.astro';
 import Kotlin from './icons/Kotlin.astro';
 import Latex from './icons/Latex.astro';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
 
-const TAGS = {
+type tLang = (str: any) => any;
+
+const lang = getLangFromUrl(Astro.url);
+const t: tLang = useTranslations(lang);
+
+type TagType = {
+  name: string;
+  class: string;
+  icon: (_props: Record<string, any>) => any;
+};
+
+type TagsType = {
+  [key: string]: TagType;
+};
+
+const TAGS: TagsType = {
   NEXT: {
     name: 'Next.js',
     class: 'bg-black text-white',
@@ -46,25 +62,18 @@ const TAGS = {
     icon: GitHub,
   },
 };
-const PROJECTS = [
-  {
-    title: 'Weather App',
-    description:
-      'Aplicación meteorológica de código abierto para Android creada con Kotlin y Jetpack Compose que ofrece previsiones en tiempo real, actualizaciones basadas en la ubicación y una interfaz de usuario moderna y personalizable mediante la API OpenWeather.',
-    github: 'https://github.com/gago852/WeatherApp',
-    image: '/projects/weatherappbanner.webp',
-    tags: [TAGS.ANDROID, TAGS.KOTLIN],
-  },
-  {
-    title: 'Resume Builder on LateX',
-    description:
-      'Un generador de currículos de código abierto que utiliza LaTeX para crear PDF de aspecto profesional y utiliza GitHub Actions para la creación y el despliegue automatizados.',
-    github: 'https://github.com/gago852/resume-latex',
-    image: '/projects/resumelatexbanner.webp',
-    link: null,
-    tags: [TAGS.LATEX, TAGS.GITHUB],
-  },
-];
+
+interface ProjectType {
+  image: string;
+  imageAlt: string;
+  title: string;
+  description: string;
+  tags: string[];
+  link?: string;
+  github?: string;
+}
+
+const PROJECTS: ProjectType[] = t('projects');
 ---
 
 <div class="flex flex-col gap-y-16">
@@ -88,16 +97,22 @@ const PROJECTS = [
           </h3>
           <div class="flex flex-wrap mt-2">
             <ul class="flex flex-row mb-2 gap-x-2">
-              {tags.map((tag) => (
-                <li>
-                  <span
-                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-                  >
-                    <tag.icon class="size-4" />
-                    {tag.name}
-                  </span>
-                </li>
-              ))}
+              {tags.map((item) => {
+                const tag: TagType = TAGS[item];
+
+                if (tag) {
+                  return (
+                    <li>
+                      <span
+                        class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                      >
+                        <tag.icon class="size-4" />
+                        {tag.name}
+                      </span>
+                    </li>
+                  );
+                }
+              })}
             </ul>
 
             <div class="mt-2 text-gray-700 dark:text-gray-400">
@@ -107,7 +122,7 @@ const PROJECTS = [
               {github && (
                 <LinkButton href={github}>
                   <GitHub class="size-6" />
-                  Code
+                  {t('projects.code')}
                 </LinkButton>
               )}
               {link && (
