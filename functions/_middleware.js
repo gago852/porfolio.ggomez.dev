@@ -7,10 +7,11 @@ export async function onRequest(context) {
   if (url.pathname === '/') {
     // Obtenemos el header "accept-language"
     const acceptLanguage = request.headers.get('accept-language') || '';
-
+    console.log('accept-language:', acceptLanguage);
     // Extraemos la primera preferencia. Por defecto usamos inglés ("en")
     let lang = 'en';
     if (acceptLanguage.toLowerCase().startsWith('es')) {
+      console.log('Idioma español');
       return fetch(request); // No redirige si el idioma es español
     }
 
