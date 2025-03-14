@@ -1,7 +1,7 @@
 export async function onRequest(context) {
   const { request } = context;
   const url = new URL(request.url);
-  console.log('URL:', url);
+  console.log('URL:', url.origin);
 
   // Solo intervenimos en la ruta raíz "/"
   if (url.pathname === '/') {
