@@ -24,7 +24,7 @@ export const ui = {
       '+2 años de experiencia. <strong>Ingeniero de Software</strong> de Colombia 🇨🇴. Especializado en el desarrollo de aplicaciones móviles únicas.',
     'hero.mail': 'Contáctame',
     'hero.linkedin': 'LinkedIn',
-    'hero.resume': 'Currículo',
+    'hero.resume': 'Resume',
     'hero.resume.spanish': 'Español',
     'hero.resume.english': 'Inglés',
     'exp.title': 'Experiencia laboral',
