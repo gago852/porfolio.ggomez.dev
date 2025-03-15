@@ -1,7 +1,7 @@
 export async function onRequest(context) {
   const { request } = context;
   const url = new URL(request.url);
-  console.log('URL:', url.origin);
+  console.log('Context:', context);
 
   // Only intervene on the root path "/"
   if (url.pathname === '/') {
