@@ -3,22 +3,29 @@ export async function onRequest(context) {
   const url = new URL(request.url);
   console.log('URL:', url.origin);
 
-  // Solo intervenimos en la ruta raíz "/"
+  // Only intervene on the root path "/"
   if (url.pathname === '/') {
-    // Obtenemos el header "accept-language"
+    // Get the "accept-language" header
     const acceptLanguage = request.headers.get('accept-language') || '';
     console.log('accept-language:', acceptLanguage);
-    // Extraemos la primera preferencia. Por defecto usamos inglés ("en")
-    let lang = 'en';
-    if (acceptLanguage.toLowerCase().startsWith('es')) {
-      console.log('Idioma español');
-      return fetch(request); // No redirige si el idioma es español
+
+    // Extract the first language preference. Default to Spanish ("es")
+    let lang = 'es';
+    if (acceptLanguage.toLowerCase().startsWith('en')) {
+      console.log('Language preference is English');
+      lang = 'en'; // Set language to English
     }
 
-    // Redirigimos a la ruta correspondiente
+    // If the language is Spanish, stay on "/"
+    if (lang === 'es') {
+      console.log('Staying on the root path for Spanish');
+      return fetch(request); // Continue with the normal request
+    }
+
+    // Redirect to the English path
     return Response.redirect(`${url.origin}/${lang}`, 302);
   }
 
-  // Para otras rutas, continuamos con la solicitud normal
+  // For other paths, continue with the normal request
   return fetch(request);
 }
