@@ -19,13 +19,13 @@ export async function onRequest(context) {
     // If the language is Spanish, stay on "/"
     if (lang === 'es') {
       console.log('Staying on the root path for Spanish');
-      return fetch(request); // Continue with the normal request
+      return context.next(); // Continue with the normal request
     }
 
     // Redirect to the English path
-    return Response.redirect(`${url.origin}/${lang}`, 302);
+    return new Response.redirect(`${url.origin}/${lang}`, 302);
   }
 
   // For other paths, continue with the normal request
-  return fetch(request);
+  return context.next();
 }
