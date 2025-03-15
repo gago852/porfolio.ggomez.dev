@@ -23,7 +23,7 @@ export async function onRequest(context) {
     }
 
     // Redirect to the English path
-    return new Response.redirect(`${url.origin}/${lang}`, 302);
+    return Response.redirect(`${url.origin}/${lang}`, 302);
   }
 
   // For other paths, continue with the normal request
