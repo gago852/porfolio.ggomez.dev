@@ -12,7 +12,6 @@ const translatePath = useTranslatedPath(lang);
       if (langPrefix == lang) return <></>
       return (
         <a
-        transition:name="reload"
          href={translatePath("/", langPrefix)}
          class="hover:scale-125 transition"
          >{label}</a>)
