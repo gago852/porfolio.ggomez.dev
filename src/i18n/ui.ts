@@ -33,16 +33,16 @@ export const ui = {
     'about.bio': `<p>
       Comencé hace más de dos años en el desarrollo de aplicaciones Android,
       especializándome en Java y el ecosistema de Android. Durante este tiempo,
-      he trabajado en para <strong
-        >empresas de servicios públicos, con control de cuadrillas y facturación</strong
-      >, asegurando la implementación y mantenimiento eficiente de estas
+      he trabajado para varias <strong
+        >empresas de servicios públicos, desarrollando sistemas de control de cuadrillas y facturación</strong
+      >, asegurando la implementación y la ejecución eficiente de estas
       aplicaciones.
     </p>
 
     <p>
       Mi interés por mejorar y optimizar el desarrollo móvil me llevó a aprender
-      Kotlin y Jetpack Compose, además de profundizar en pruebas para <strong>
-        la calidad del software.</strong
+      Kotlin y Jetpack Compose, además de profundizar en pruebas para <strong> 
+      la calidad del software.</strong
       >
     </p>
 
@@ -108,7 +108,7 @@ export const ui = {
     'projects.title': 'Projects',
     'about.title': 'About me',
     'about.bio': `<p>      
-      I started more than two years ago in Android application development, focusing on Java and the Android ecosystem. During this time, I have worked for <strong>utility companies, specifically on crew management and billing</strong>, ensuring the efficient implementation and maintenance of these applications.
+      I started more than two years ago in Android application development, focusing on Java and the Android ecosystem. During this time, I have worked for <strong>utility companies, specifically developing crew management and billing software</strong>, ensuring the efficient implementation and maintenance of these applications.
     </p>
 
     <p>
