@@ -1,29 +1,36 @@
-import { defineConfig, envField } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
+import { defineConfig, envField } from "astro/config";
 
-import robotsTxt from 'astro-robots-txt';
+import robotsTxt from "astro-robots-txt";
+
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), robotsTxt()],
-  site: 'https://ggomez-dev.pages.dev/',
+  integrations: [robotsTxt()],
+  site: "https://ggomez-dev.pages.dev/",
+
   env: {
     schema: {
       ISPRODUCTION: envField.boolean({
         default: false,
-        context: 'server',
-        access: 'public',
+        context: "server",
+        access: "public",
       }),
     },
   },
+
   i18n: {
-    locales: ['en', 'es'],
-    defaultLocale: 'es',
+    locales: ["en", "es"],
+    defaultLocale: "es",
     routing: {
       prefixDefaultLocale: false,
     },
     fallback: {
-      en: 'es',
+      en: "es",
     },
+  },
+
+  vite: {
+    plugins: [tailwindcss()],
   },
 });
