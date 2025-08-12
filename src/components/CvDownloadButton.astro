@@ -32,13 +32,13 @@ const OPTIONS = [
     <ul>
       {
         OPTIONS.map((option) => (
-          <li class="px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm">
+          <li class="px-2 py-1.5 hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm">
             <a
               href={`${option.url}`}
               target="_blank"
               rel="noopener noreferrer"
               role="link"
-              class="px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm"
+              class="px-2 py-1.5 cursor-pointer text-gray-800 dark:text-white"
             >
               {option.title}
             </a>
