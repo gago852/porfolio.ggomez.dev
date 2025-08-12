@@ -4,9 +4,23 @@ import robotsTxt from "astro-robots-txt";
 
 import tailwindcss from "@tailwindcss/vite";
 
+import sitemap from "@astrojs/sitemap";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [robotsTxt()],
+  integrations: [
+    robotsTxt(),
+    sitemap({
+      filter: (page) => page !== "https://ggomez-dev.pages.dev/components/",
+      i18n: {
+        defaultLocale: "en",
+        locales: {
+          en: "en",
+          es: "es",
+        },
+      },
+    }),
+  ],
   site: "https://ggomez-dev.pages.dev/",
 
   env: {
@@ -21,12 +35,12 @@ export default defineConfig({
 
   i18n: {
     locales: ["en", "es"],
-    defaultLocale: "es",
+    defaultLocale: "en",
     routing: {
       prefixDefaultLocale: false,
     },
     fallback: {
-      en: "es",
+      es: "en",
     },
   },
 

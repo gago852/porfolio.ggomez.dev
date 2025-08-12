@@ -1,24 +1,24 @@
 export async function onRequest(context) {
   const { request } = context;
   const url = new URL(request.url);
-  console.log('Context:', context);
+  // console.log("Context:", context);
 
   // Only intervene on the root path "/"
-  if (url.pathname === '/') {
+  if (url.pathname === "/") {
     // Get the "accept-language" header
-    const acceptLanguage = request.headers.get('accept-language') || '';
-    console.log('accept-language:', acceptLanguage);
+    const acceptLanguage = request.headers.get("accept-language") || "";
+    // console.log("accept-language:", acceptLanguage);
 
-    // Extract the first language preference. Default to Spanish ("es")
-    let lang = 'es';
-    if (acceptLanguage.toLowerCase().startsWith('en')) {
-      console.log('Language preference is English');
-      lang = 'en'; // Set language to English
+    // Extract the first language preference. Default to English ("en")
+    let lang = "en";
+    if (acceptLanguage.toLowerCase().startsWith("en")) {
+      console.log("Language preference is English");
+      lang = "en"; // Set language to English
     }
 
     // If the language is Spanish, stay on "/"
-    if (lang === 'es') {
-      console.log('Staying on the root path for Spanish');
+    if (lang === "en") {
+      // console.log("Staying on the root path for English");
       return context.next(); // Continue with the normal request
     }
 

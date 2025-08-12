@@ -1,14 +1,15 @@
 export const languages = {
-  es: '🇪🇸',
   en: '🇺🇸',
+  es: '🇪🇸',
+  
 };
 
-export const defaultLang = 'es';
+export const defaultLang = 'en';
 
 export const ui = {
   es: {
     'layout.title':
-      'Porfolio de Gabriel Gomez - Desarrollador y Programador Android con 2 años de experiencia',
+      'Porfolio de Gabriel Gomez - Desarrollador y Programador Android con 3 años de experiencia',
     'layout.description':
       'Contrata a Gabriel para crear tu aplicación móvil. Desarrollador móvil. Especializado en crear aplicaciones Android únicas.',
     'nav.home': 'Experiencia',
@@ -21,7 +22,7 @@ export const ui = {
     'hero.badge': 'Disponible para trabajar',
     'hero.title': 'Hey, soy Gabriel',
     'hero.bio':
-      '+2 años de experiencia. <strong>Ingeniero de Software</strong> de Colombia 🇨🇴. Especializado en el desarrollo de aplicaciones móviles únicas.',
+      '+3 años de experiencia. <strong>Ingeniero de Software</strong> de Colombia 🇨🇴. Especializado en el desarrollo de aplicaciones móviles únicas.',
     'hero.mail': 'Contáctame',
     'hero.linkedin': 'LinkedIn',
     'hero.resume': 'Resume',
@@ -31,7 +32,7 @@ export const ui = {
     'projects.title': 'Proyectos',
     'about.title': 'Sobre mí',
     'about.bio': `<p>
-      Comencé hace más de dos años en el desarrollo de aplicaciones Android,
+      Comencé hace más de tres años en el desarrollo de aplicaciones Android,
       especializándome en Java y el ecosistema de Android. Durante este tiempo,
       he trabajado para varias <strong
         >empresas de servicios públicos, desarrollando sistemas de control de cuadrillas y facturación</strong
@@ -57,7 +58,7 @@ export const ui = {
     exp: [
       {
         title: 'Desarrollador de Software',
-        date: 'Junio 2023',
+        date: 'Junio 2024',
         company: 'Extreme Technologies S.A.',
         description:
           'Analizo, diseño, desarrollo y doy mantenimiento a soluciones de software para control de cuadrillas de operarios en empresas de servicio publico como agua, luz y gas. Ademas apoye a un equipo de desarrollo para implementar un middleware a un sistema de cobros de un servicio de transporte publico de buses. Se utilizo tecnologías como Java, Android, PostgreSQL, entre otras.',
@@ -85,7 +86,7 @@ export const ui = {
     ],
   },
   en: {
-    'layout.title': `Gabriel Gomez's Portfolio - Android Developer and Programmer with 2 years of experience`,
+    'layout.title': `Gabriel Gomez's Portfolio - Android Developer and Programmer with 3 years of experience`,
     'layout.description':
       'Hire Gabriel to build your mobile application. Mobile developer. Specialized in creating unique Android applications.',
     'nav.home': 'Experience',
@@ -98,7 +99,7 @@ export const ui = {
     'hero.badge': 'Open to work',
     'hero.title': `Hey, I'm Gabriel`,
     'hero.bio':
-      '+2 years of experience. <strong>Software Engineer</strong> from Colombia 🇨🇴. Specialized in the development of unique mobile applications.',
+      '+3 years of experience. <strong>Software Engineer</strong> from Colombia 🇨🇴. Specialized in the development of unique mobile applications.',
     'hero.mail': 'Contact me',
     'hero.linkedin': 'LinkedIn',
     'hero.resume': 'Resume',
@@ -108,7 +109,7 @@ export const ui = {
     'projects.title': 'Projects',
     'about.title': 'About me',
     'about.bio': `<p>      
-      I started more than two years ago in Android application development, focusing on Java and the Android ecosystem. During this time, I have worked for <strong>utility companies, specifically developing crew management and billing software</strong>, ensuring the efficient implementation and maintenance of these applications.
+      I started more than three years ago in Android application development, focusing on Java and the Android ecosystem. During this time, I have worked for <strong>utility companies, specifically developing crew management and billing software</strong>, ensuring the efficient implementation and maintenance of these applications.
     </p>
 
     <p>
