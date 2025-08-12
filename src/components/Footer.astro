@@ -5,10 +5,9 @@ const currentYear = new Date().getFullYear();
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const { currentLocale, url } = Astro;
+const { currentLocale } = Astro;
 
-const footerMainSite =
-  currentLocale === "en" ? `${url.origin}/` : `${url.origin}/es/`;
+const footerMainSite = currentLocale === "en" ? `/` : `/es/`;
 const aboutMeFooterLink =
   currentLocale === "en" ? "/#about-me" : "/es/#sobre-mi";
 ---
