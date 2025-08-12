@@ -124,7 +124,7 @@ export const ui = {
     exp: [
       {
         title: 'Software Developer',
-        date: 'June 2023',
+        date: 'June 2024',
         company: 'Extreme Technologies S.A.',
         description:
           'Analyze, design, develop and maintain software solutions for crew control in public utilities such as water, electricity and gas. I also supported a development team to implement a middleware to a billing system for a public transport bus service. We used technologies such as Java, Android, PostgreSQL, among others.',
