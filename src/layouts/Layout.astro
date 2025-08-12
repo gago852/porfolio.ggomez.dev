@@ -10,15 +10,26 @@ import { defaultLang } from "@/i18n/ui";
 interface Props {
   title: string;
   description: string;
+  author?: string;
 }
 
-const { description, title } = Astro.props;
+const { description, title, author = "Gabriel Gómez" } = Astro.props;
 const isProduction = ISPRODUCTION;
 
 const { currentLocale, url } = Astro;
 const { origin } = url;
 const defaultLocale = defaultLang;
 const listLanguages = ["en", "es"];
+
+// SEO helpers
+const canonicalUrl = `${origin}${url.pathname}`;
+const siteName = "Gabriel Gómez — Portfolio";
+const ogLocaleMap: Record<string, string> = { en: "en_US", es: "es_ES" };
+const effectiveLocale = (currentLocale ??
+  defaultLocale) as keyof typeof ogLocaleMap;
+const ogLocale = ogLocaleMap[effectiveLocale] ?? "en_US";
+const ogLocaleAlternate =
+  effectiveLocale === "en" ? ogLocaleMap["es"] : ogLocaleMap["en"];
 ---
 
 <!doctype html>
@@ -26,11 +37,13 @@ const listLanguages = ["en", "es"];
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href={canonicalUrl} />
     {
       listLanguages.map((lang) => (
         <link
@@ -40,21 +53,36 @@ const listLanguages = ["en", "es"];
         />
       ))
     }
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={`${origin}/${defaultLocale === "en" ? "" : defaultLocale}`}
+    />
+
+    {/* Open Graph (no Twitter) */}
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:locale:alternate" content={ogLocaleAlternate} />
+    <meta name="author" content={author} />
     <ClientRouter />
 
     {
-      // isProduction && (
-      //   <>
-      //     {/* <!-- Google tag (gtag.js) --> */}
-      //     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L2XEND6SBJ"></script>
-      //       <script>
-      //         window.dataLayer = window.dataLayer || [];
-      //         function gtag(){dataLayer.push(arguments);}
-      //         gtag('js', new Date());
-      //         gtag('config', 'G-L2XEND6SBJ');
-      //       </script>
-      //   </>
-      // )
+      isProduction && (
+        <>
+          {/* <!-- Google tag (gtag.js) --> */}
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-L2XEND6SBJ"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-L2XEND6SBJ');
+            </script>
+        </>
+      )
     }
   </head>
 
