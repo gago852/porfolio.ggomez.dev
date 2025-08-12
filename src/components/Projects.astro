@@ -1,14 +1,14 @@
 ---
-import GitHub from './icons/GitHub.astro';
-import NextJS from './icons/NextJS.astro';
-import Tailwind from './icons/Tailwind.astro';
-import Link from './icons/Link.astro';
-import LinkButton from './LinkButton.astro';
-import Android from './icons/Android.astro';
-import Java from './icons/Java.astro';
-import Kotlin from './icons/Kotlin.astro';
-import Latex from './icons/Latex.astro';
-import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+import GitHub from "./icons/GitHub.astro";
+import NextJS from "./icons/NextJS.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+import Android from "./icons/Android.astro";
+import Java from "./icons/Java.astro";
+import Kotlin from "./icons/Kotlin.astro";
+import Latex from "./icons/Latex.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 type tLang = (str: any) => any;
 
@@ -27,38 +27,38 @@ type TagsType = {
 
 const TAGS: TagsType = {
   NEXT: {
-    name: 'Next.js',
-    class: 'bg-black text-white',
+    name: "Next.js",
+    class: "bg-black text-white",
     icon: NextJS,
   },
   TAILWIND: {
-    name: 'Tailwind CSS',
-    class: 'bg-[#003159] text-white',
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
   ANDROID: {
-    name: 'Android',
-    class: 'bg-[#32B675] text-white',
+    name: "Android",
+    class: "bg-[#32B675] text-white",
     icon: Android,
   },
   JAVA: {
-    name: 'Java',
-    class: 'bg-[#007396] text-white',
+    name: "Java",
+    class: "bg-[#007396] text-white",
     icon: Java,
   },
   KOTLIN: {
-    name: 'Kotlin',
-    class: 'bg-[#0095D5] text-white',
+    name: "Kotlin",
+    class: "bg-[#0095D5] text-white",
     icon: Kotlin,
   },
   LATEX: {
-    name: 'LaTeX',
-    class: 'bg-[#008080] text-white',
+    name: "LaTeX",
+    class: "bg-[#008080] text-white",
     icon: Latex,
   },
   GITHUB: {
-    name: 'GitHub',
-    class: 'bg-[#333] text-white',
+    name: "GitHub",
+    class: "bg-[#333] text-white",
     icon: GitHub,
   },
 };
@@ -73,7 +73,7 @@ interface ProjectType {
   github?: string;
 }
 
-const PROJECTS: ProjectType[] = t('projects');
+const PROJECTS: ProjectType[] = t("projects");
 ---
 
 <div class="flex flex-col gap-y-16">
@@ -81,10 +81,10 @@ const PROJECTS: ProjectType[] = t('projects');
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
         <div class="w-full md:w-1/2">
-          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+          <div class="relative col-span-6 row-span-5 transition duration-500 ease-in-out shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50 aspect-[16/9]">
             <img
               alt={title}
-              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              class="absolute inset-0 object-cover object-top w-full h-full transition duration-500 md:scale-110 md:group-hover:scale-105"
               loading="lazy"
               src={image}
             />
@@ -122,7 +122,7 @@ const PROJECTS: ProjectType[] = t('projects');
               {github && (
                 <LinkButton href={github}>
                   <GitHub class="size-6" />
-                  {t('projects.code')}
+                  {t("projects.code")}
                 </LinkButton>
               )}
               {link && (

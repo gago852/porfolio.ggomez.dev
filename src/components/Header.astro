@@ -1,33 +1,33 @@
 ---
-import { getLangFromUrl, useTranslations } from '@/i18n/utils';
-import ThemeToggle from './ThemeToggle.astro';
-import LanguagePicker from './LanguagePicker.astro';
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import ThemeToggle from "./ThemeToggle.astro";
+import LanguagePicker from "./LanguagePicker.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const { currentLocale } = Astro;
-currentLocale === 'en' ? '/en/#experiencia' : '/#experiencia';
+currentLocale === "en" ? "/en/#experiencia" : "/#experiencia";
 const navItems = [
   {
-    title: t('nav.home'),
-    label: currentLocale === 'en' ? 'experience' : 'experiencia',
-    url: currentLocale === 'en' ? '/en/#experience' : '/#experiencia',
+    title: t("nav.home"),
+    label: currentLocale === "en" ? "experience" : "experiencia",
+    url: currentLocale === "en" ? "/en/#experience" : "/#experiencia",
   },
   {
-    title: t('nav.projects'),
-    label: currentLocale === 'en' ? 'projects' : 'proyectos',
-    url: currentLocale === 'en' ? '/en/#projects' : '/#proyectos',
+    title: t("nav.projects"),
+    label: currentLocale === "en" ? "projects" : "proyectos",
+    url: currentLocale === "en" ? "/en/#projects" : "/#proyectos",
   },
   {
-    title: t('nav.about'),
-    label: currentLocale === 'en' ? 'about-me' : 'sobre-mi',
-    url: currentLocale === 'en' ? '/en/#about-me' : '/#sobre-mi',
+    title: t("nav.about"),
+    label: currentLocale === "en" ? "about-me" : "sobre-mi",
+    url: currentLocale === "en" ? "/en/#about-me" : "/#sobre-mi",
   },
   {
-    title: t('nav.contact'),
-    label: currentLocale === 'en' ? 'contact' : 'contacto',
-    url: 'mailto:ggomez.dev@outlook.com',
+    title: t("nav.contact"),
+    label: currentLocale === "en" ? "contact" : "contacto",
+    url: "mailto:ggomez.dev@outlook.com",
   },
 ];
 ---
@@ -36,7 +36,7 @@ const navItems = [
   class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
 >
   <nav
-    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
+    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center animate-[nav-shadow_1s_linear_both] [animation-timeline:scroll()] [animation-range:0_100px]"
   >
     {
       navItems.map((link) => (
@@ -55,18 +55,18 @@ const navItems = [
 </header>
 
 <script>
-  document.addEventListener('astro:page-load', () => {
-    const sections = document.querySelectorAll('section');
-    const navItems = document.querySelectorAll('header nav a');
+  document.addEventListener("astro:page-load", () => {
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll("header nav a");
 
     const callback = (entries: any[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
-            if (item.getAttribute('aria-label') == entry.target.id) {
-              item.classList.add('text-blue-500');
+            if (item.getAttribute("aria-label") == entry.target.id) {
+              item.classList.add("text-blue-500");
             } else {
-              item.classList.remove('text-blue-500');
+              item.classList.remove("text-blue-500");
             }
           });
         }
@@ -75,7 +75,7 @@ const navItems = [
 
     const observer = new IntersectionObserver(callback, {
       root: null,
-      rootMargin: '0px',
+      rootMargin: "0px",
       threshold: 0.3,
     });
 
@@ -85,7 +85,7 @@ const navItems = [
 
     // Cleanup function
     document.onvisibilitychange = () => {
-      if (document.visibilityState === 'hidden') {
+      if (document.visibilityState === "hidden") {
         observer.disconnect();
       } else {
         sections.forEach((section) => {
@@ -97,22 +97,45 @@ const navItems = [
 </script>
 
 <style>
-  nav {
+  @reference '../styles/global.css';
+
+  /* Theme-aware tokens controlled by html.dark */
+  :global(html) {
+    --nav-bg-from: rgb(255 255 255 / 0);
+    --nav-bg-to: rgb(255 255 255 / 0.5);
+    --nav-ring-color: rgb(255 255 255 / 0.1);
+  }
+
+  :global(html.dark) {
+    --nav-bg-from: rgb(31 41 55 / 0);
+    --nav-bg-to: rgb(31 41 55 / 0.9);
+    --nav-ring-color: rgb(255 255 255 / 0.1);
+  }
+
+  /* nav {
     animation: nav-shadown 1s linear both;
     animation-timeline: scroll();
     animation-range: 0 100px;
-  }
+  }*/
 
   nav {
-    @apply dark:bg-gray-800/90 bg-white/50;
+    /* Base state: transparent. Animated state defined in @keyframes below */
+    background-color: transparent;
   }
 
-  @keyframes nav-shadown {
-    0% {
-      @apply dark:bg-gray-800/0 bg-white/0;
+  @keyframes nav-shadow {
+    from {
+      background-color: var(--nav-bg-from);
     }
     to {
-      @apply shadow-lg ring-1 backdrop-blur ring-white/10;
+      background-color: var(--nav-bg-to);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow:
+        0 10px 15px -3px rgb(0 0 0 / 0.1),
+        0 4px 6px -4px rgb(0 0 0 / 0.1),
+        0 0 0 1px var(--nav-ring-color);
+      border-radius: 9999px;
     }
   }
 </style>
