@@ -11,9 +11,9 @@ export async function onRequest(context) {
 
     // Extract the first language preference. Default to English ("en")
     let lang = "en";
-    if (acceptLanguage.toLowerCase().startsWith("en")) {
-      console.log("Language preference is English");
-      lang = "en"; // Set language to English
+    if (acceptLanguage.toLowerCase().startsWith("es")) {
+      // console.log("Language preference is Spanish");
+      lang = "es"; // Set language to English
     }
 
     // If the language is Spanish, stay on "/"
