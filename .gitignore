@@ -26,3 +26,5 @@ pnpm-lock.yaml
 yarn.lock
 
 .pnpm-store/
+
+.wrangler/
