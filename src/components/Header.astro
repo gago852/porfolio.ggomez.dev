@@ -7,22 +7,22 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const { currentLocale } = Astro;
-currentLocale === "en" ? "/en/#experiencia" : "/#experiencia";
+// currentLocale === "en" ? "/en/#experiencia" : "/#experiencia";
 const navItems = [
   {
     title: t("nav.home"),
     label: currentLocale === "en" ? "experience" : "experiencia",
-    url: currentLocale === "en" ? "/en/#experience" : "/#experiencia",
+    url: currentLocale === "en" ? "/#experience" : "/es/#experiencia",
   },
   {
     title: t("nav.projects"),
     label: currentLocale === "en" ? "projects" : "proyectos",
-    url: currentLocale === "en" ? "/en/#projects" : "/#proyectos",
+    url: currentLocale === "en" ? "/#projects" : "/es/#proyectos",
   },
   {
     title: t("nav.about"),
     label: currentLocale === "en" ? "about-me" : "sobre-mi",
-    url: currentLocale === "en" ? "/en/#about-me" : "/#sobre-mi",
+    url: currentLocale === "en" ? "/#about-me" : "/es/#sobre-mi",
   },
   {
     title: t("nav.contact"),

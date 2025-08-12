@@ -1,9 +1,16 @@
 ---
-import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 const currentYear = new Date().getFullYear();
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const { currentLocale, url } = Astro;
+
+const footerMainSite =
+  currentLocale === "en" ? `${url.origin}/` : `${url.origin}/es/`;
+const aboutMeFooterLink =
+  currentLocale === "en" ? "/#about-me" : "/es/#sobre-mi";
 ---
 
 <footer
@@ -14,23 +21,23 @@ const t = useTranslations(lang);
   >
     <span class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90"
       >© {currentYear}
-      <a href="https://ggomez-dev.pages.dev/" class="hover:underline"
-        >Gabriel Gomez</a
-      >. {t('footer.rights')}
+      <a href={footerMainSite} class="hover:underline">Gabriel Gomez</a>. {
+        t("footer.rights")
+      }
     </span>
     <ul
       class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
     >
       <li>
-        <a href="/#sobre-mi" class="hover:underline me-4 md:me-6"
-          >{t('nav.about')}</a
+        <a href={aboutMeFooterLink} class="hover:underline me-4 md:me-6"
+          >{t("nav.about")}</a
         >
       </li>
       <li>
         <a
           id="contacto"
           href="mailto:ggomez.dev@outlook.com"
-          class="hover:underline">{t('nav.contact')}</a
+          class="hover:underline">{t("nav.contact")}</a
         >
       </li>
     </ul>

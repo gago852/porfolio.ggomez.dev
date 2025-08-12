@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev --host",
     "build": "astro build",
-    "test-local": "astro build && wrangler pages dev ./dist --ip 0.0.0.0",
+    "dev-cloud": "astro build && wrangler pages dev ./dist --ip 0.0.0.0",
     "preview": "astro preview",
     "astro": "astro"
   },
