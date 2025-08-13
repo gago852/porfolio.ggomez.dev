@@ -1,7 +1,7 @@
 # 👨🏻‍💻 Porfolio para programadores y desarrolladores
 
 <div align="center">
-<a href="https://ggomez-dev.pages.dev/">
+<a href="https://gabogomez.dev/">
 <img src="./public/porfolio.webp">
 </a>
 <p></p>

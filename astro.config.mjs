@@ -11,7 +11,7 @@ export default defineConfig({
   integrations: [
     robotsTxt(),
     sitemap({
-      filter: (page) => page !== "https://ggomez-dev.pages.dev/components/",
+      filter: (page) => page !== "https://gabogomez.dev/components/",
       i18n: {
         defaultLocale: "en",
         locales: {
@@ -21,7 +21,7 @@ export default defineConfig({
       },
     }),
   ],
-  site: "https://ggomez-dev.pages.dev/",
+  site: "https://gabogomez.dev/",
 
   env: {
     schema: {
