@@ -1,0 +1,34 @@
+---
+interface Props {
+  href: string;
+  lang: string;
+}
+
+const { href, lang } = Astro.props as Props;
+
+type BadgeType = {
+  name: string;
+  badge: string;
+};
+
+type BadgesType = {
+  [key: string]: BadgeType;
+};
+
+const BADGES: BadgesType = {
+  es: {
+    name: "Disponible en Google Play",
+    badge: "/projects/GetItOnGooglePlay_Badge_Web_color_Spanish.webp",
+  },
+  en: {
+    name: "Get it on Google Play",
+    badge: "/projects/GetItOnGooglePlay_Badge_Web_color_English.webp",
+  },
+};
+
+const badge = BADGES[lang];
+---
+
+<a href={href} target="_blank" rel="noopener noreferrer" class="block">
+  <img src={badge.badge} alt={badge.name} class="h-12 w-auto" loading="lazy" />
+</a>

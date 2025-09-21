@@ -4,6 +4,7 @@ import NextJS from "./icons/NextJS.astro";
 import Tailwind from "./icons/Tailwind.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
+import GooglePlayBadge from "./GooglePlayBadge.astro";
 import Android from "./icons/Android.astro";
 import Java from "./icons/Java.astro";
 import Kotlin from "./icons/Kotlin.astro";
@@ -69,7 +70,7 @@ interface ProjectType {
   title: string;
   description: string;
   tags: string[];
-  link?: string;
+  link?: { kind: "web" | "googlePlay"; href: string };
   github?: string;
 }
 
@@ -125,11 +126,14 @@ const PROJECTS: ProjectType[] = t("projects");
                   {t("projects.code")}
                 </LinkButton>
               )}
-              {link && (
-                <LinkButton href={link}>
+              {link && link.kind === "web" && (
+                <LinkButton href={link.href}>
                   <Link class="size-4" />
                   Preview
                 </LinkButton>
+              )}
+              {link && link.kind === "googlePlay" && (
+                <GooglePlayBadge href={link.href} lang={lang} />
               )}
             </footer>
           </div>
