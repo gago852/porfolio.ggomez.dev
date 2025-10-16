@@ -1,9 +1,12 @@
+import type { UILocale } from "./types";
+
 export const languages = {
   en: "🇺🇸",
   es: "🇪🇸",
-};
+} as const;
 
-export const defaultLang = "en";
+export type Lang = keyof typeof languages;
+export const defaultLang: Lang = "en";
 
 export const ui = {
   es: {
@@ -159,4 +162,4 @@ export const ui = {
       },
     ],
   },
-} as const;
+} satisfies Record<keyof typeof languages, UILocale>;

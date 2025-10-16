@@ -1,16 +1,16 @@
 ---
-import Layout from '@/layouts/Layout.astro';
+import Layout from "@/layouts/Layout.astro";
 
-import AboutMe from '@/components/AboutMe.astro';
-import Briefcase from '@/components/icons/Briefcase.astro';
-import CodeIcon from '@/components/icons/Code.astro';
-import Experience from '@/components/Experience.astro';
-import ProfileCheck from '@/components/icons/ProfileCheck.astro';
-import Projects from '@/components/Projects.astro';
-import SectionContainer from '@/components/SectionContainer.astro';
-import Hero from '@/components/Hero.astro';
-import TitleSection from '@/components/TitleSection.astro';
-import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+import AboutMe from "@/components/AboutMe.astro";
+import Briefcase from "@/components/icons/Briefcase.astro";
+import CodeIcon from "@/components/icons/Code.astro";
+import Experience from "@/components/Experience.astro";
+import ProfileCheck from "@/components/icons/ProfileCheck.astro";
+import Projects from "@/components/Projects.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Hero from "@/components/Hero.astro";
+import TitleSection from "@/components/TitleSection.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 type tLang = (str: any) => any;
 
@@ -19,7 +19,7 @@ const t: tLang = useTranslations(lang);
 const { currentLocale } = Astro;
 ---
 
-<Layout title={t('layout.title')} description={t('layout.description')}>
+<Layout title={t("layout.title")} description={t("layout.description")}>
   <main class="px-4">
     <SectionContainer class="py-16 md:py-36">
       <Hero />
@@ -27,27 +27,27 @@ const { currentLocale } = Astro;
 
     <div class="space-y-24">
       <SectionContainer
-        id={currentLocale === 'en' ? 'experience' : 'experiencia'}
+        id={currentLocale === "en" ? "experience" : "experiencia"}
       >
         <TitleSection>
           <Briefcase class="size-8" />
-          {t('exp.title')}
+          {t("exp.title")}
         </TitleSection>
         <Experience />
       </SectionContainer>
 
-      <SectionContainer id={currentLocale === 'en' ? 'projects' : 'proyectos'}>
+      <SectionContainer id={currentLocale === "en" ? "projects" : "proyectos"}>
         <TitleSection>
           <CodeIcon class="size-7" />
-          {t('projects.title')}
+          {t("projects.title")}
         </TitleSection>
         <Projects />
       </SectionContainer>
 
-      <SectionContainer id={currentLocale === 'en' ? 'about-me' : 'sobre-mi'}>
+      <SectionContainer id={currentLocale === "en" ? "about-me" : "sobre-mi"}>
         <TitleSection>
           <ProfileCheck class="size-8" />
-          {t('about.title')}
+          {t("about.title")}
         </TitleSection>
         <AboutMe />
       </SectionContainer>

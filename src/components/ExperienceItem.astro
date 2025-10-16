@@ -1,6 +1,6 @@
 ---
-import { getLangFromUrl, useTranslations } from '@/i18n/utils';
-import LinkInline from './LinkInline.astro';
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import LinkInline from "./LinkInline.astro";
 
 interface Props {
   title: string;
@@ -41,7 +41,7 @@ const t = useTranslations(lang);
     {
       link && (
         <LinkInline href={link}>
-          {t('exp.know_more')}
+          {t("exp.know_more")}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

@@ -1,20 +1,20 @@
 ---
-import { getLangFromUrl, useTranslations } from '@/i18n/utils';
-import ExperienceItem from './ExperienceItem.astro';
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import ExperienceItem from "./ExperienceItem.astro";
 
-type Experience = {
+interface Experience {
   date: string;
   title: string;
   company: string;
   description: string;
   link: string;
-};
+}
 
 type tLang = (str: any) => any;
 
 const lang = getLangFromUrl(Astro.url);
 const t: tLang = useTranslations(lang);
-const EXPERIENCE: Experience[] = t('exp');
+const EXPERIENCE: Experience[] = t("exp");
 ---
 
 <ol class="relative mt-16">
