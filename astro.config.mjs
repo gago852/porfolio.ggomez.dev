@@ -1,15 +1,13 @@
 import { defineConfig, envField } from "astro/config";
 
-import robotsTxt from "astro-robots-txt";
-
 import tailwindcss from "@tailwindcss/vite";
 
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://gabogomez.dev",
   integrations: [
-    robotsTxt(),
     sitemap({
       filter: (page) => page !== "https://gabogomez.dev/components/",
       i18n: {
@@ -21,7 +19,6 @@ export default defineConfig({
       },
     }),
   ],
-  site: "https://gabogomez.dev/",
 
   env: {
     schema: {
