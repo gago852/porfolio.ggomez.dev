@@ -39,7 +39,6 @@ export async function onRequest(context) {
     const urlLang = url.searchParams.get("lang");
     if (urlLang === "en" || urlLang === "es") {
       const cookieValue = createLangCookie(urlLang);
-      console.log({ cookieValue, urlLang });
       if (urlLang === "en") {
         return redirectWithCookie(`${url.origin}/`, cookieValue);
       }
@@ -65,7 +64,6 @@ export async function onRequest(context) {
 
     // 2) If we already have a cookie, honor it
     const preferred = cookies["preferred_lang"];
-    console.log({ preferred });
     if (preferred === "es") {
       return Response.redirect(`${url.origin}/es`, 302);
     }
