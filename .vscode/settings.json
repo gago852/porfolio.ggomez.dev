@@ -12,5 +12,6 @@
     "spanish",
     "svgl",
     "weatherappbanner"
-  ]
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

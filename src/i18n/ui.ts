@@ -65,6 +65,12 @@ export const ui = {
         description:
           "Analizo, diseño, desarrollo y doy mantenimiento a soluciones de software para control de cuadrillas de operarios en empresas de servicio publico como agua, luz y gas. Ademas apoye a un equipo de desarrollo para implementar un middleware a un sistema de cobros de un servicio de transporte publico de buses. Se utilizo tecnologías como Java, Android, PostgreSQL, entre otras.",
         link: "https://www.extreme.com.co/extreme/",
+        bulletPoints: [
+          "Desarrollé sincronización offline en Android (Java) que permitió a más de 40 cuadrillas reportar daños sin conexión, reduciendo los errores de carga de órdenes en un 25%.",
+          "Implementé rastreo GPS optimizado en segundo plano, disminuyendo el consumo de batería de la app en ~20% y mejorando la precisión de seguimiento en campo.",
+          "Creé un módulo de catalogación de árboles basado en archivos KMZ que eliminó duplicados y redujo el tiempo de registro por sitio en un 50%.",
+          "Implementé funciones críticas como el botón de pánico y el monitoreo en tiempo real de autobuses, reduciendo los tiempos de respuesta ante incidentes en un 60%.",
+        ],
       },
     ],
     "projects.code": "Código Fuente",
@@ -135,6 +141,12 @@ export const ui = {
         description:
           "Analyze, design, develop and maintain software solutions for crew control in public utilities such as water, electricity and gas. I also supported a development team to implement a middleware to a billing system for a public transport bus service. We used technologies such as Java, Android, PostgreSQL, among others.",
         link: "https://www.extreme.com.co/extreme/",
+        bulletPoints: [
+          "Developed an offline synchronization feature in Android (Java) for over 40 field crews, enabling damage reporting without internet access and reducing upload errors by 25%.",
+          "Optimized background GPS tracking to reduce app battery consumption by 20% and improve route accuracy for field teams.",
+          "Built a KMZ-based tree cataloging module that eliminated duplicate records and reduced on-site registration time by 50%.",
+          "Reduced incident response times by 60% by implementing critical safety features, including a panic button and real-time bus tracking.",
+        ],
       },
     ],
     "projects.code": "Code",

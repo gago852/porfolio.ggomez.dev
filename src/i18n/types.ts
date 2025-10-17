@@ -5,6 +5,7 @@ export interface ExperienceItem {
   date: string;
   company: string;
   description: string;
+  bulletPoints: string[];
   link?: string;
 }
 
