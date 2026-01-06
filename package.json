@@ -1,7 +1,7 @@
 {
   "name": "porfolio-dev",
   "type": "module",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": true,
   "scripts": {
     "dev": "astro dev --host",
@@ -21,7 +21,7 @@
     "typescript": "5.9.3"
   },
   "devDependencies": {
-    "vite": "^7.2.6",
-    "wrangler": "4.56.0"
+    "vite": "^7.3.0",
+    "wrangler": "4.54.0"
   }
 }
