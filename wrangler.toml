@@ -1,0 +1,12 @@
+name = "porfolio-ggomez-dev"
+main = "./dist/_worker.js/index.js"
+compatibility_date = "2026-03-12"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+run_worker_first = true
+
+[vars]
+ISPRODUCTION = false
