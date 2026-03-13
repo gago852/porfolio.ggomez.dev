@@ -1,7 +1,5 @@
 import type { APIRoute } from "astro";
 
-export const prerender = true;
-
 const robotsTxt = `
 Sitemap: ${new URL("sitemap-index.xml", import.meta.env.SITE).href}
 `.trim();

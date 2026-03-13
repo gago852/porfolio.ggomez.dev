@@ -16,7 +16,6 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
-.dev.vars
 
 # macOS-specific files
 .DS_Store
@@ -34,5 +33,3 @@ bun.*
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
-
-.claude/settings.local.json
