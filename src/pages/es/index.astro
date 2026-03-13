@@ -16,7 +16,6 @@ type tLang = (str: any) => any;
 
 const lang = getLangFromUrl(Astro.url);
 const t: tLang = useTranslations(lang);
-const { currentLocale } = Astro;
 ---
 
 <Layout title={t("layout.title")} description={t("layout.description")}>
@@ -27,7 +26,7 @@ const { currentLocale } = Astro;
 
     <div class="space-y-24">
       <SectionContainer
-        id={currentLocale === "en" ? "experience" : "experiencia"}
+        id="experience"
       >
         <TitleSection>
           <Briefcase class="size-8" />
@@ -36,7 +35,7 @@ const { currentLocale } = Astro;
         <Experience />
       </SectionContainer>
 
-      <SectionContainer id={currentLocale === "en" ? "projects" : "proyectos"}>
+      <SectionContainer id="projects">
         <TitleSection>
           <CodeIcon class="size-7" />
           {t("projects.title")}
@@ -44,7 +43,7 @@ const { currentLocale } = Astro;
         <Projects />
       </SectionContainer>
 
-      <SectionContainer id={currentLocale === "en" ? "about-me" : "sobre-mi"}>
+      <SectionContainer id="about-me">
         <TitleSection>
           <ProfileCheck class="size-8" />
           {t("about.title")}

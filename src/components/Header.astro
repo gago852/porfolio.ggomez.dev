@@ -1,10 +1,15 @@
 ---
-import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import {
+  getLangFromUrl,
+  useTranslatedPath,
+  useTranslations,
+} from "@/i18n/utils";
 import ThemeToggle from "./ThemeToggle.astro";
 import LanguagePicker from "./LanguagePicker.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const languagePath = useTranslatedPath(lang);
 
 const { currentLocale } = Astro;
 // currentLocale === "en" ? "/en/#experiencia" : "/#experiencia";
@@ -12,17 +17,17 @@ const navItems = [
   {
     title: t("nav.home"),
     label: currentLocale === "en" ? "experience" : "experiencia",
-    url: "/#experience",
+    url: languagePath("#experience", lang),
   },
   {
     title: t("nav.projects"),
     label: currentLocale === "en" ? "projects" : "proyectos",
-    url: "/#projects",
+    url: languagePath("#projects", lang),
   },
   {
     title: t("nav.about"),
     label: currentLocale === "en" ? "about-me" : "sobre-mi",
-    url: "/#about-me",
+    url: languagePath("#about-me", lang),
   },
   {
     title: t("nav.contact"),

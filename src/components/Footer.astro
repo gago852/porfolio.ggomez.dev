@@ -8,8 +8,7 @@ const t = useTranslations(lang);
 const { currentLocale } = Astro;
 
 const footerMainSite = currentLocale === "en" ? `/` : `/es/`;
-const aboutMeFooterLink =
-  currentLocale === "en" ? "/#about-me" : "/es/#sobre-mi";
+const aboutMeFooterLink = `${footerMainSite}#about-me`;
 ---
 
 <footer

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev --host",
     "build": "astro build",
-    "dev-cloud": "astro build && wrangler pages dev ./dist --ip 0.0.0.0",
+    "dev-cloud": "astro build && wrangler dev --ip 0.0.0.0",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -21,6 +21,7 @@
     "typescript": "5.9.3"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260313.1",
     "vite": "^7.3.1",
     "wrangler": "4.62.0"
   }
