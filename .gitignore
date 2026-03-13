@@ -33,3 +33,5 @@ bun.*
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+.dev.vars

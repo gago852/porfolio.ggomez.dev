@@ -26,9 +26,7 @@ const { currentLocale } = Astro;
     </SectionContainer>
 
     <div class="space-y-24">
-      <SectionContainer
-        id={currentLocale === "en" ? "experience" : "experiencia"}
-      >
+      <SectionContainer id="experience">
         <TitleSection>
           <Briefcase class="size-8" />
           {t("exp.title")}
@@ -36,7 +34,7 @@ const { currentLocale } = Astro;
         <Experience />
       </SectionContainer>
 
-      <SectionContainer id={currentLocale === "en" ? "projects" : "proyectos"}>
+      <SectionContainer id="projects">
         <TitleSection>
           <CodeIcon class="size-7" />
           {t("projects.title")}
@@ -44,7 +42,7 @@ const { currentLocale } = Astro;
         <Projects />
       </SectionContainer>
 
-      <SectionContainer id={currentLocale === "en" ? "about-me" : "sobre-mi"}>
+      <SectionContainer id="about-me">
         <TitleSection>
           <ProfileCheck class="size-8" />
           {t("about.title")}
