@@ -8,6 +8,16 @@ binding = "ASSETS"
 run_worker_first = true
 not_found_handling = "404-page"
 
+[observability]
+[observability.logs]
+enabled = true
+head_sampling_rate = 0.5
+invocation_logs = true
+
+[observability.traces]
+enabled = true
+head_sampling_rate = 0.5
+
 [env.production]
 routes = [
   { pattern = "gabogomez.dev/*", custom_domain = true },
