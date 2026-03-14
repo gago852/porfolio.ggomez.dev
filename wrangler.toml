@@ -2,6 +2,9 @@ name = "portfolio-worker-ggomez-page"
 compatibility_date = "2026-03-13"
 main = "./src/worker.ts"
 
+workers_dev = false
+preview_urls = true
+
 [assets]
 directory = "./dist/"
 binding = "ASSETS"
