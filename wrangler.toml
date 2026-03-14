@@ -20,6 +20,6 @@ head_sampling_rate = 0.5
 
 [env.production]
 routes = [
-  { pattern = "gabogomez.dev/", custom_domain = true },
-  { pattern = "www.gabogomez.dev/", custom_domain = true }
+  { pattern = "gabogomez.dev", custom_domain = true },
+  { pattern = "www.gabogomez.dev", custom_domain = true }
 ]
