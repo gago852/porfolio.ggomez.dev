@@ -11,9 +11,9 @@ export const defaultLang: Lang = "en";
 export const ui = {
   es: {
     "layout.title":
-      "Porfolio de Gabriel Gomez - Desarrollador y Programador Android con 3 años de experiencia",
+      "Porfolio de Gabriel Gomez - Desarrollador Full stack java con 4 años de experiencia",
     "layout.description":
-      "Contrata a Gabriel para crear tu aplicación móvil. Desarrollador móvil. Especializado en crear aplicaciones Android únicas.",
+      "Ingeniero de Software fullstack: aplicaciones Android con Java/Kotlin, servicios backend con Spring Boot y aplicaciones web con React.",
     "nav.home": "Experiencia",
     "nav.projects": "Proyectos",
     "nav.about": "Sobre mí",
@@ -24,7 +24,7 @@ export const ui = {
     "hero.badge": "Disponible para trabajar",
     "hero.title": "Hey, soy Gabriel",
     "hero.bio":
-      "+3 años de experiencia. <strong>Ingeniero de Software</strong> de Colombia 🇨🇴. Especializado en el desarrollo de aplicaciones móviles únicas.",
+      "+4 años de experiencia. <strong>Ingeniero de Software</strong> de Colombia 🇨🇴. Especializado en el desarrollo de aplicaciones fullstack únicas.",
     "hero.mail": "Contáctame",
     "hero.linkedin": "LinkedIn",
     "hero.resume": "Resume",
@@ -34,30 +34,38 @@ export const ui = {
     "projects.title": "Proyectos",
     "about.title": "Sobre mí",
     "about.bio": `<p>
-      Comencé hace más de tres años en el desarrollo de aplicaciones Android,
-      especializándome en Java y el ecosistema de Android. Durante este tiempo,
-      he trabajado para varias <strong
-        >empresas de servicios públicos, desarrollando sistemas de control de cuadrillas y facturación</strong
-      >, asegurando la implementación y la ejecución eficiente de estas
-      aplicaciones.
+      Empecé como desarrollador Android hace más de cuatro años,
+      especializándome en Java para <strong>empresas de servicios públicos,
+      construyendo sistemas de cuadrillas y facturación</strong>.
     </p>
 
     <p>
-      Mi interés por mejorar y optimizar el desarrollo móvil me llevó a aprender
-      Kotlin y Jetpack Compose, además de profundizar en pruebas para <strong> 
-      la calidad del software.</strong
-      >
+      La necesidad de integrar soluciones completas me llevó a aprender
+      <strong>Spring Boot y React</strong>, pasando de ser un desarrollador
+      mobile a liderar una migración fullstack: diseñando la API, el backend
+      y conectándolo a una interfaz web moderna.
     </p>
 
     <p>
-      Desde Colombia, me mantengo en constante aprendizaje, explorando <strong>
-        tecnologías para el desarrollo móvil multiplataforma, como Flutter y
-        React Native</strong
-      >, y adoptando mejores prácticas para seguir creciendo como desarrollador.
+      Esa evolución define mi perfil hoy: un <strong>ingeniero de software
+      fullstack</strong> que entiende tanto el ecosistema Android como la
+      arquitectura de sistemas web, desde Colombia y en constante aprendizaje.
     </p>`,
     "footer.rights": "Casi todos los derechos reservados",
     "exp.know_more": "Saber más",
     exp: [
+      {
+        title: "Freelance Software Developer",
+        date: "Actualmente...",
+        company: "Autónomo",
+        description:
+          "Trabajo como freelance construyendo aplicaciones móviles Android, backends con Spring Boot y webs con React, entregando soluciones completas de software a medida.",
+        bulletPoints: [
+          "Migré un web service monolítico en Java a Spring Boot, mejorando la escalabilidad y reduciendo los tiempos de respuesta en un 40%.",
+          "Construí un sistema de matriculación de cursos con React (frontend) y Spring Boot (backend), reduciendo el tiempo de matrícula en un 30%.",
+          "Implementé la segunda fase de una aplicación móvil para el registro y seguimiento de PQR en una empresa de servicios públicos, optimizando el rendimiento y reduciendo los tiempos de carga en un 15%.",
+        ],
+      },
       {
         title: "Desarrollador de Software",
         date: "Junio 2024",
@@ -95,12 +103,24 @@ export const ui = {
         image: "/projects/resumelatexbanner.webp",
         tags: ["LATEX", "GITHUB"],
       },
+      {
+        title: "MatricuApp",
+        description:
+          "Aplicación web fullstack de matriculación académica. React para el frontend, Spring Boot para el backend, todo en un monorepo con despliegue integrado.",
+        github: "https://github.com/gago852/MatricuApp",
+        image: "/projects/matricuapp.webp",
+        link: {
+          kind: "web",
+          href: "https://matricuapp.gabogomez.dev",
+        },
+        tags: ["REACT", "SPRING", "JAVA"],
+      },
     ],
   },
   en: {
     "layout.title": `Gabriel Gomez's Portfolio - Android Developer and Programmer with 3 years of experience`,
     "layout.description":
-      "Hire Gabriel to build your mobile application. Mobile developer. Specialized in creating unique Android applications.",
+      "Fullstack Software Engineer: Android applications with Java/Kotlin, backend services with Spring Boot and web applications with React.",
     "nav.home": "Experience",
     "nav.projects": "Projects",
     "nav.about": "About me",
@@ -111,7 +131,7 @@ export const ui = {
     "hero.badge": "Open to work",
     "hero.title": `Hey, I'm Gabriel`,
     "hero.bio":
-      "+3 years of experience. <strong>Software Engineer</strong> from Colombia 🇨🇴. Specialized in the development of unique mobile applications.",
+      "+4 years of experience. <strong>Software Engineer</strong> from Colombia 🇨🇴. Specialized in the development of unique fullstack applications.",
     "hero.mail": "Contact me",
     "hero.linkedin": "LinkedIn",
     "hero.resume": "Resume",
@@ -120,20 +140,32 @@ export const ui = {
     "exp.title": "Experience",
     "projects.title": "Projects",
     "about.title": "About me",
-    "about.bio": `<p>      
-      I started more than three years ago in Android application development, focusing on Java and the Android ecosystem. During this time, I have worked for <strong>utility companies, specifically developing crew management and billing software</strong>, ensuring the efficient implementation and maintenance of these applications.
+    "about.bio": `<p>
+      I started as an Android developer over four years ago, specializing in Java for <strong>utility companies, building crew and billing systems</strong>.
     </p>
 
     <p>
-      My interest in improving and optimizing mobile development led me to learn Kotlin and Jetpack Compose, as well as delve into testing for <strong>software quality.</strong>
+      The need to integrate complete solutions led me to learn <strong>Spring Boot and React</strong>, going from being a mobile developer to leading a fullstack migration: designing the API, the backend and connecting it to a modern web interface.
     </p>
 
-    <p>      
-        From Colombia, I am constantly learning, <strong>exploring technologies for cross-platform mobile development, such as Flutter and React Native</strong>, and adopting best practices to keep growing as a developer.
+    <p>
+      That evolution defines my profile today: a <strong>fullstack software engineer</strong> who understands both the Android ecosystem and the architecture of web systems, from Colombia and constantly learning.
     </p>`,
     "footer.rights": "Almost all rights reserved",
     "exp.know_more": "Know more",
     exp: [
+      {
+        title: "Freelance Software Developer",
+        date: "Currently...",
+        company: "Self-employed",
+        description:
+          "I work as a freelancer building Android mobile apps, backends with Spring Boot and webs with React, delivering complete custom software solutions.",
+        bulletPoints: [
+          "Migrated a monolithic Java web service to Spring Boot, improving scalability and reducing response times by 40%.",
+          "Built a course enrollment system with React (frontend) and Spring Boot (backend), reducing enrollment time by 30%.",
+          "Implemented the second phase of a mobile application for the registration and tracking of PQR in a public utilities company, optimizing performance and reducing load times by 15%.",
+        ],
+      },
       {
         title: "Software Developer",
         date: "June 2024",
@@ -171,6 +203,18 @@ export const ui = {
         image: "/projects/resumelatexbanner.webp",
         // link: { kind: 'web', href: 'https://legal.gabogomez.dev' },
         tags: ["LATEX", "GITHUB"],
+      },
+      {
+        title: "MatricuApp",
+        description:
+          "Fullstack web application for academic enrollment. React for the frontend, Spring Boot for the backend, all in a single repository with integrated deployment.",
+        github: "https://github.com/gago852/MatricuApp",
+        image: "/projects/matricuapp.webp",
+        link: {
+          kind: "web",
+          href: "https://matricuapp.gabogomez.dev",
+        },
+        tags: ["REACT", "SPRING", "JAVA"],
       },
     ],
   },
