@@ -11,6 +11,7 @@ import Kotlin from "./icons/Kotlin.astro";
 import Latex from "./icons/Latex.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import Spring from "./icons/Spring.astro";
+import React from "./icons/React.astro";
 
 type tLang = (str: any) => any;
 
@@ -30,7 +31,7 @@ type TagsType = {
 const TAGS: TagsType = {
   NEXT: {
     name: "Next.js",
-    class: "bg-black text-white",
+    class: "bg-white text-black",
     icon: NextJS,
   },
   TAILWIND: {
@@ -40,12 +41,12 @@ const TAGS: TagsType = {
   },
   ANDROID: {
     name: "Android",
-    class: "bg-[#32B675] text-white",
+    class: "bg-[#0a2416] text-white",
     icon: Android,
   },
   JAVA: {
     name: "Java",
-    class: "bg-[#007396] text-white",
+    class: "bg-[#1c2f3a] text-white",
     icon: Java,
   },
   KOTLIN: {
@@ -65,8 +66,13 @@ const TAGS: TagsType = {
   },
   SPRING: {
     name: "Spring Boot",
-    class: "bg-[#6DB33F] text-white",
+    class: "bg-[#1b3a09] text-white",
     icon: Spring,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-[#20232a] text-white",
+    icon: React,
   },
 };
 
@@ -88,7 +94,7 @@ const PROJECTS: ProjectType[] = t("projects");
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
         <div class="w-full md:w-1/2">
-          <div class="relative col-span-6 row-span-5 transition duration-500 ease-in-out shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50 aspect-[16/9]">
+          <div class="relative col-span-6 row-span-5 transition duration-500 ease-in-out shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50 aspect-video">
             <img
               alt={title}
               class="absolute inset-0 object-cover object-top w-full h-full transition duration-500 md:scale-110 md:group-hover:scale-105"
@@ -103,7 +109,7 @@ const PROJECTS: ProjectType[] = t("projects");
             {title}
           </h3>
           <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row mb-2 gap-x-2">
+            <ul class="flex flex-row flex-wrap mb-2 gap-2">
               {tags.map((item) => {
                 const tag: TagType = TAGS[item];
 
