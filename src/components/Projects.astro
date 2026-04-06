@@ -12,6 +12,7 @@ import Latex from "./icons/Latex.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import Spring from "./icons/Spring.astro";
 import React from "./icons/React.astro";
+import TagPill from "./TagPill.astro";
 
 type tLang = (str: any) => any;
 
@@ -112,19 +113,7 @@ const PROJECTS: ProjectType[] = t("projects");
             <ul class="flex flex-row flex-wrap mb-2 gap-2">
               {tags.map((item) => {
                 const tag: TagType = TAGS[item];
-
-                if (tag) {
-                  return (
-                    <li>
-                      <span
-                        class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-                      >
-                        <tag.icon class="size-4" />
-                        {tag.name}
-                      </span>
-                    </li>
-                  );
-                }
+                if (tag) return <TagPill {...tag} />;
               })}
             </ul>
 

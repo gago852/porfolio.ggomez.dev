@@ -1,0 +1,16 @@
+---
+interface Props {
+  name: string;
+  class: string;
+  icon: any;
+}
+
+const { name, class: tagClass, icon: Icon } = Astro.props;
+---
+
+<li>
+  <span class={`flex gap-x-2 rounded-full text-xs ${tagClass} py-1 px-2`}>
+    <Icon class="size-4" />
+    {name}
+  </span>
+</li>
