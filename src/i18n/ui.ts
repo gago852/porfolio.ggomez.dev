@@ -118,7 +118,7 @@ export const ui = {
     ],
   },
   en: {
-    "layout.title": `Gabriel Gomez's Portfolio - Android Developer and Programmer with 3 years of experience`,
+    "layout.title": `Gabriel Gomez's Portfolio - Full-Stack Java Developer with 4 years of experience`,
     "layout.description":
       "Fullstack Software Engineer: Android applications with Java/Kotlin, backend services with Spring Boot and web applications with React.",
     "nav.home": "Experience",
