@@ -14,14 +14,14 @@
     "@astrojs/check": "0.9.8",
     "@astrojs/sitemap": "3.7.2",
     "@fontsource-variable/onest": "5.2.11",
-    "@tailwindcss/vite": "4.2.2",
-    "astro": "6.1.5",
+    "@tailwindcss/vite": "4.2.4",
+    "astro": "6.1.8",
     "astro-robots-txt": "1.0.0",
-    "tailwindcss": "4.2.2",
+    "tailwindcss": "4.2.4",
     "typescript": "5.9.3"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20260411.1",
-    "wrangler": "4.81.1"
+    "@cloudflare/workers-types": "^4.20260422.1",
+    "wrangler": "4.84.1"
   }
 }
