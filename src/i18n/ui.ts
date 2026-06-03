@@ -64,6 +64,7 @@ export const ui = {
           "Migré un web service monolítico en Java a Spring Boot, mejorando la escalabilidad y reduciendo los tiempos de respuesta en un 40%.",
           "Construí un sistema de matriculación de cursos con React (frontend) y Spring Boot (backend), reduciendo el tiempo de matrícula en un 30%.",
           "Implementé la segunda fase de una aplicación móvil para el registro y seguimiento de PQR en una empresa de servicios públicos, optimizando el rendimiento y reduciendo los tiempos de carga en un 15%.",
+          "Desarrollé un POS de escritorio con Electron y NestJS, con almacenamiento offline-first en SQLite, impresión térmica USB, lectura de códigos de barras y auditoría completa de inventario.",
         ],
       },
       {
@@ -164,6 +165,7 @@ export const ui = {
           "Migrated a monolithic Java web service to Spring Boot, improving scalability and reducing response times by 40%.",
           "Built a course enrollment system with React (frontend) and Spring Boot (backend), reducing enrollment time by 30%.",
           "Implemented the second phase of a mobile application for the registration and tracking of PQR in a public utilities company, optimizing performance and reducing load times by 15%.",
+          "Built a desktop POS with Electron and NestJS, featuring offline-first SQLite, USB thermal printing, barcode scanning, and full inventory audit trails.",
         ],
       },
       {
