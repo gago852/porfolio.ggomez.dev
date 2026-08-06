@@ -1,7 +1,7 @@
 {
   "name": "porfolio-dev",
   "type": "module",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "private": true,
   "scripts": {
     "dev": "astro dev --host",
@@ -11,23 +11,24 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "0.9.9",
+    "@astrojs/check": "0.9.10",
     "@astrojs/sitemap": "3.7.3",
     "@fontsource-variable/onest": "5.3.0",
     "@tailwindcss/vite": "4.3.3",
-    "astro": "7.1.1",
+    "astro": "7.1.6",
     "astro-robots-txt": "1.0.0",
     "tailwindcss": "4.3.3",
-    "typescript": "6.0.3"
+    "typescript": "7.0.2"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "5.20260719.1",
-    "wrangler": "4.112.0"
+    "@cloudflare/workers-types": "5.20260801.1",
+    "wrangler": "4.118.0"
   },
   "pnpm": {
     "overrides": {
-      "js-yaml@<4.2.0": ">=4.2.0 <5.0.0",
-      "yaml@<2.8.3": ">=2.8.3 <3.0.0"
+      "js-yaml@<4.3.0": ">=4.3.0 <5.0.0",
+      "yaml@<2.8.3": ">=2.8.3 <3.0.0",
+      "undici@<7.29.0": ">=7.29.0 <8.0.0"
     }
   }
 }
