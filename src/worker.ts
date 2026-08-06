@@ -127,6 +127,13 @@ export default class extends WorkerEntrypoint<Env> {
       // Add /es prefix
       targetPath = `/${preferred}${pathname === "/" ? "" : pathname}`;
     }
+
+    // Routes are directories (index.html) in the static export, so append a
+    // trailing slash here to avoid a second 307 from the assets layer.
+    const lastSegment = targetPath.split("/").pop() ?? "";
+    if (!targetPath.endsWith("/") && !lastSegment.includes(".")) {
+      targetPath += "/";
+    }
     console.log({ targetPath });
 
     const target = new URL(targetPath, url.origin);
