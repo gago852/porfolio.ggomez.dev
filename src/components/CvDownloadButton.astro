@@ -7,10 +7,12 @@
 const OPTIONS = [
   {
     title: `🇪🇸 Spanish`,
+    lang: "es",
     url: "https://github.com/gago852/resume-latex/releases/latest/download/gabriel_gomez_resume_es.pdf",
   },
   {
     title: `🇺🇸 English`,
+    lang: "en",
     url: "https://github.com/gago852/resume-latex/releases/latest/download/gabriel_gomez_resume_en.pdf",
   },
 ];
@@ -38,7 +40,8 @@ const OPTIONS = [
               target="_blank"
               rel="noopener noreferrer"
               role="link"
-              class="px-2 py-1.5 cursor-pointer text-gray-800 dark:text-white"
+              data-cv-lang={option.lang}
+              class="px-2 py-1.5 cursor-pointer text-gray-800 dark:text-white js-cv-download-link"
             >
               {option.title}
             </a>
@@ -81,4 +84,15 @@ const OPTIONS = [
       const isClosed = !cvDownloadMenu.classList.contains("open");
       cvDownloadMenu.classList[isClosed ? "add" : "remove"]("open");
     });
+
+  document.querySelectorAll(".js-cv-download-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "cv_download", {
+          cv_language: link.dataset.cvLang,
+          file_url: link.href,
+        });
+      }
+    });
+  });
 </script>
