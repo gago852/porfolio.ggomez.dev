@@ -30,10 +30,11 @@
         "AnbuselvanRocky.bootstrap5-vscode",
         "fractalbrew.backticks",
         "ms-vscode.live-server",
-        "vitest.explorer"
+        "vitest.explorer",
+        "clinyong.vscode-css-modules"
       ]
     }
-  },
+  }
 
   // Features to add to the dev container. More info: https://containers.dev/features.
   // "features": {},
@@ -42,7 +43,7 @@
   // "forwardPorts": [8788]
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "corepack install -g yarn@stable"
+  // "postCreateCommand": "corepack install -g yarn@stable"
 
   // Configure tool-specific properties.
   // "customizations": {},

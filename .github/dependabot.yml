@@ -12,6 +12,10 @@ updates:
      interval: weekly
    cooldown:
      default-days: 3
+   groups:
+     devcontainers:
+       patterns:
+         - "*"
 
  - package-ecosystem: "npm"
    directory: "/"
@@ -19,6 +23,13 @@ updates:
      interval: weekly
    cooldown:
      default-days: 3
+   groups:
+     # One weekly PR for all minor/patch bumps. Majors are not grouped, so
+     # each one arrives as its own PR for separate review.
+     minor-and-patch:
+       update-types:
+         - "minor"
+         - "patch"
    ignore:
      # @astrojs/check's language server crashes under `astro check` on the
      # TypeScript 7 major (see commit ff415a4). Stay on 6.x until it's supported.
